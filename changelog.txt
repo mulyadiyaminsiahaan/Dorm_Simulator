@@ -1,0 +1,2 @@
+Mengapa bermasalah saat penugasan:
+1.peletakan for ehile dan lain sebaginya salah sehingga fungsi tidak bisa melakukan print.

@@ -3,8 +3,3 @@
 12S22009|Dolok Butarbutar|2022|male
 12S22010|Reinaldy Hutapea|2022|male
 12S22014|Kezia Hutagaol|2022|female
-12S22015|Angelina Nadeak|2022|female
-12S22024|Pimpin Loi|2022|male
-12S22025|Bronson Siallagan|2022|male
-12S22026|Ruben Sianipar|2022|male
-12S22027|Ferry Panjaitan|2022|male
