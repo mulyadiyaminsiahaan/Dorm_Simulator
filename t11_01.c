@@ -74,10 +74,12 @@ int main(int argc, char **argv) {
                 ptr = strtok(NULL, "|");
                 strcpy(std.year, ptr);
                 ptr = strtok(NULL, "|");
+                // printf("%s", ptr);
                 if (strcmp(ptr, "male\n") == 0) {
-                    std.gender = GENDER_MALE;
-                } else if (strcmp(ptr, "female\n") == 0) {
-                    std.gender = GENDER_FEMALE;
+                    std.gender = 0;
+                } 
+                if (strcmp(ptr, "male\n") != 0) {
+                    std.gender = 1;
                 }
                 
                 struct student_t new_student = create_student(std.id, std.name, std.year, std.gender);
