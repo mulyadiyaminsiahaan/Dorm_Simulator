@@ -11,7 +11,7 @@ void print_student(struct student_t _student)
     printf("%s|%s|%s|%s|%s\n", _student.id, _student.name, _student.year, fm[_student.gender], _student.dorm->name);
     fflush(stdout);
 }
-
+ 
 
 void assign_student(struct student_t *_student, struct dorm_t *_dorm, char *id, char *dorm_name)
 {

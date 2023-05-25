@@ -2,4 +2,4 @@
 12S22002|Jeremy Nainggolan|2022|male
 12S22009|Dolok Butarbutar|2022|male
 12S22010|Reinaldy Hutapea|2022|male
-12S22014|Kezia Hutagaol|2022|female
+12S22014|Kezia Hutagaol|2022|female 

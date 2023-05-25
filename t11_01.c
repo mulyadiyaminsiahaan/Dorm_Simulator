@@ -1,5 +1,5 @@
 // 12S222014 - Kezia Hutagaol
-// 12S22034 - Mulyadi Siahaan
+// 12S22034 - Mulyadi Siahaan 
 
 #include <stdio.h>
 #include <stdlib.h>

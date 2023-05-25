@@ -23,5 +23,5 @@ void dorm_empty(struct student_t *students, struct dorm_t *dorms, int std);
 struct student_t create_student(char *_id, char *_name, char *_year,
                                 enum gender_t _gender);
 
-
+ 
 #endif 
