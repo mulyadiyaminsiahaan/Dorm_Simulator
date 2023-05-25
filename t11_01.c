@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
     FILE *fptr;
     FILE *fstr;
 
-    while (x == 1) {
+    while (x == 1) { 
         fgets(input, sizeof(input), stdin); //untuk memanggil input untuk mengetahui jalannya program
         input[strcspn(input, "\r\n")] = 0; // memastikan tidak ada NULL yang terprint
 
