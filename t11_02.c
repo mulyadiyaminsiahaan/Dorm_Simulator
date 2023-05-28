@@ -28,8 +28,12 @@ int main(int argc, char **argv) {
         fgets(input, sizeof(input), stdin); //untuk memanggil input untuk mengetahui jalannya program
         input[strcspn(input, "\r\n")] = 0; // memastikan tidak ada NULL yang terprint
 
+        char fng[50];
+        strtok(input, "#");
+        strcpy(fng, input);
+
         //percabangan 1
-        if (strcmp(input, "dorm-print-all-detail") == 0) {
+        if (strcmp(fng, "dorm-print-all-detail") == 0) {
             fptr = fopen("./storage/dorm-repository.txt", "r");
 
             if (fptr != NULL) {
@@ -58,7 +62,7 @@ int main(int argc, char **argv) {
             }
 
         // percabangan 2
-        } else if (strcmp(input, "student-print-all-detail") == 0) {
+        } else if (strcmp(fng, "student-print-all-detail") == 0) {
             
 
             fstr = fopen("./storage/student-repository.txt", "r");
@@ -75,11 +79,11 @@ int main(int argc, char **argv) {
                 strcpy(std.year, ptr);
                 ptr = strtok(NULL, "|");
                 if (strcmp(ptr, "male\n") == 0) {
-                    std.gender = GENDER_MALE;
-                } else if (strcmp(ptr, "female\n") == 0) {
-                    std.gender = GENDER_FEMALE;
+                    std.gender = 0;
+                } 
+                if (strcmp(ptr, "male\n") != 0) {
+                    std.gender = 1;
                 }
-                
                 struct student_t new_student = create_student(std.id, std.name, std.year, std.gender);
                 enrollment[i] = new_student;
                 i++;
@@ -90,8 +94,48 @@ int main(int argc, char **argv) {
                     print_student(enrollment[j]);
                 }
             }
-        } else if (strcmp(input, "---") == 0) {
+        } else if (strcmp(fng, "---") == 0) {
             x++;
+        } else if (strcmp(fng, "dorm-add") == 0) {
+            ptr = strtok(NULL, "#");
+            strcpy(drm.name, ptr);
+            ptr = strtok(NULL, "#");
+            drm.capacity = atoi(ptr);
+            ptr = strtok(NULL, "#");
+            if (strcmp(ptr, "male") == 0) {
+                drm.gender = GENDER_MALE;
+                } else if (strcmp(ptr, "female") == 0) {
+                    drm.gender = GENDER_FEMALE;
+                }
+            const char *fm[] = {"male", "female"};
+
+            fptr = fopen("./storage/dorm-repository.txt","a");
+            fprintf(fptr, "%s|%d|%s\n", drm.name, drm.capacity, fm[drm.gender]);
+            //fputs(input, fptr);
+            fclose(fptr);
+
+        } else if (strcmp(fng, "student-add") == 0){
+            ptr = strtok(NULL, "#");
+            strcpy(std.id, ptr);
+            ptr = strtok(NULL, "#");
+            strcpy(std.name, ptr);
+            ptr = strtok(NULL, "#");
+            strcpy(std.year, ptr);
+            ptr = strtok(NULL, "#");
+            if (strcmp(ptr, "male") == 0) {
+                std.gender = GENDER_MALE;
+                } else if (strcmp(ptr, "female") == 0) {
+                    std.gender = GENDER_FEMALE;
+                }
+            const char *fm[] = {"male", "female"};
+
+            fstr = fopen("./storage/student-repository.txt","a");
+            fprintf(fstr, "%s|%s|%s|%s\n", std.id, std.name, std.year, fm[std.gender]);
+        
+            fclose(fstr);
+
+        } else if (strcmp(fng, "assign-student") == 0){
+            printf("semoga bisa bismillah");
         }
     } 
     return 0;
