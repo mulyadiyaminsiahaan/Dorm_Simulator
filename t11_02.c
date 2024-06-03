@@ -1,6 +1,3 @@
-// 12S222014 - Kezia Hutagaol
-// 12S22034 - Mulyadi Siahaan 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -135,7 +132,23 @@ int main(int argc, char **argv) {
             fclose(fstr);
 
         } else if (strcmp(fng, "assign-student") == 0){
-            printf("semoga bisa bismillah");
+            //printf("semoga bisa bismillah");
+        } else if (strcmp(fng, "student-print-all") == 0) {
+            fstr = fopen("./storage/student-repository.txt", "r");
+            if (fstr != NULL) {
+                while (fgets(buff, sizeof(buff), fstr) != NULL) {
+                    printf("%s", buff);
+                }
+                fclose(fstr);
+            }
+        } else if (strcmp(fng, "dorm-print-all") == 0) {
+            fptr = fopen("./storage/dorm-repository.txt", "r");
+            if (fptr != NULL) {
+                while (fgets(buff, sizeof(buff), fptr) != NULL) {
+                    printf("%s", buff);
+                }
+                fclose(fptr);
+            }
         }
     } 
     return 0;
